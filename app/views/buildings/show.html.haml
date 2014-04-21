@@ -1,0 +1,17 @@
+%h1= @building.name || "Unnamed Building"
+
+%h2 Owners
+%ul
+  - @building.owners.each do |owner|
+    %li= link_to owner.name, owner
+
+%h2 Council
+%ul
+  - @building.representatives.each do |rep|
+    %li
+      = link_to rep.name, rep
+      - if rep.role.present?
+        (#{rep.role}) 
+
+%h2 Syndic
+= link_to @building.syndic.name, @building.syndic

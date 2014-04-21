@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Condo
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top.navbar-inverse{ role: "navigation" }
+      .container
+        .navbar-header
+          %button.navbar-toggle{ type: "button", data: { target: ".navbar-collapse", toggle: "collapse" } }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Condo", root_path, class: "navbar-brand"
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "Buildings", buildings_path
+    .container
+      %p.notice= notice
+      %p.alert= alert
+      = yield

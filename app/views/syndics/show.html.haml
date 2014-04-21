@@ -1,0 +1,6 @@
+%h1= @syndic.name
+
+%h2 Contacts
+%ul
+  - @syndic.contacts.each do |contact|
+    %li= link_to contact.name, contact

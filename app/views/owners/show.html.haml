@@ -1,0 +1,22 @@
+%h1= @owner.name
+
+- if @owner.representative
+  %p Council member
+
+%table.table
+  %tr
+    %th First Name
+    %th Last Name
+    %th Email
+    %th Phone
+  %tr
+    %td= @owner.first_name
+    %td= @owner.last_name
+    %td= @owner.email
+    %td= @owner.phone
+
+
+%h2 Lots
+%ul
+  - @owner.lots.each do |lot|
+    %li= link_to lot
